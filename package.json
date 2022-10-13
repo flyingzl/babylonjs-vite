@@ -1,0 +1,54 @@
+{
+    "name": "babylonjs-typescript-vite-simple-scene",
+    "version": "0.0.1",
+    "description": "A simple scene using Babylon.js, typescript and vite",
+    "main": "index.ts",
+    "dependencies": {
+        "@babylonjs/core": "^5.3.0",
+        "@babylonjs/gui": "^5.27.0",
+        "@babylonjs/gui-editor": "^5.5.0",
+        "@babylonjs/inspector": "^5.3.0",
+        "@babylonjs/loaders": "^5.3.0",
+        "@babylonjs/materials": "^5.3.0",
+        "@babylonjs/procedural-textures": "^5.27.0",
+        "@babylonjs/serializers": "^5.27.0",
+        "@types/node": "^18.8.4",
+        "ammo.js": "github:kripken/ammo.js",
+        "vue": "^3.2.40"
+    },
+    "devDependencies": {
+        "@typescript-eslint/eslint-plugin": "^5.12.0",
+        "@typescript-eslint/parser": "^5.12",
+        "@vitejs/plugin-vue": "^3.1.2",
+        "@webgpu/types": "^0.1.22",
+        "eslint": "^8.9.0",
+        "typescript": "^4.5.5",
+        "vite": "^3.1.7",
+        "vue-tsc": "^1.0.3"
+    },
+    "scripts": {
+        "dev": "vite",
+        "build": "vue-tsc --noEmit && vite build",
+        "lint": "npx eslint . --ext .ts,.tsx"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/flyingzl/babylonjs-vite.git"
+    },
+    "keywords": [
+        "Babylon.js",
+        "vite",
+        "getting started",
+        "typescript",
+        "es6"
+    ],
+    "author": {
+        "name": "Larry.Zhao",
+        "url": "http://blog.asyncoder.com/"
+    },
+    "license": "Apache-2.0",
+    "bugs": {
+        "url": "https://github.com/flyingzl/babylonjs-vite/issues"
+    },
+    "homepage": "https://github.com/flyingzl/babylonjs-vite"
+}
