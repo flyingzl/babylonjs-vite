@@ -1,4 +1,4 @@
-import * as Ammo from "ammo.js";
+import * as Ammo from 'ammo.js';
 
 // eslint-disable-next-line
 export let ammoModule: any;

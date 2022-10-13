@@ -1,21 +1,21 @@
-type Engine = import("@babylonjs/core/Engines/engine").Engine;
-type Scene = import("@babylonjs/core/scene").Scene;
+type Engine = import('@babylonjs/core/Engines/engine').Engine
+type Scene = import('@babylonjs/core/scene').Scene
 
 export interface CreateSceneClass {
-    createScene: (engine: Engine, canvas: HTMLCanvasElement) => Promise<Scene>;
-    preTasks?: Promise<unknown>[];
+    createScene: (engine: Engine, canvas: HTMLCanvasElement) => Promise<Scene>
+    preTasks?: Promise<unknown>[]
 }
 
 export interface CreateSceneModule {
-    default: CreateSceneClass;
+    default: CreateSceneClass
 }
 
 export const getSceneModuleWithName = (
     name = 'solarSystem'
 ): Promise<CreateSceneClass> => {
-    return import(`./scenes/${name}.ts` /* @vite-ignore */).then((module: CreateSceneModule)=> {
-        return module.default;
-    });
+    return import(`./scenes/${name}.ts` /* @vite-ignore */).then((module: CreateSceneModule) => {
+        return module.default
+    })
 
     // To build quicker, replace the above return statement with:
 

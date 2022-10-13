@@ -1,19 +1,19 @@
-import { Engine } from "@babylonjs/core/Engines/engine"
-import { Scene } from "@babylonjs/core/scene"
-import { ArcRotateCamera } from "@babylonjs/core/Cameras/arcRotateCamera"
-import { Vector3 } from "@babylonjs/core/Maths/math.vector"
-import { CreateSphere } from "@babylonjs/core/Meshes/Builders/sphereBuilder"
-import { StandardMaterial } from "@babylonjs/core/Materials/standardMaterial"
-import { CreateSceneClass } from "../createScene"
+import { Engine } from '@babylonjs/core/Engines/engine'
+import { Scene } from '@babylonjs/core/scene'
+import { ArcRotateCamera } from '@babylonjs/core/Cameras/arcRotateCamera'
+import { Vector3 } from '@babylonjs/core/Maths/math.vector'
+import { CreateSphere } from '@babylonjs/core/Meshes/Builders/sphereBuilder'
+import { StandardMaterial } from '@babylonjs/core/Materials/standardMaterial'
+import { CreateSceneClass } from '../createScene'
 
 // If you don't need the standard material you will still need to import it since the scene requires it.
-// import "@babylonjs/core/Materials/standardMaterial";
-import { Texture } from "@babylonjs/core/Materials/Textures/texture"
+// import '@babylonjs/core/Materials/standardMaterial';
+import { Texture } from '@babylonjs/core/Materials/Textures/texture'
 import { StarfieldProceduralTexture } from '@babylonjs/procedural-textures/starfield/index'
 import { GlowLayer } from '@babylonjs/core/Layers/glowLayer'
 import { Color3 } from '@babylonjs/core/Maths/math.color'
 import { PointLight } from '@babylonjs/core/Lights/pointLight'
-// import "@babylonjs/core/Lights/Shadows/shadowGeneratorSceneComponent"
+// import '@babylonjs/core/Lights/Shadows/shadowGeneratorSceneComponent'
 // Agument scene class
 import '@babylonjs/core/Helpers/sceneHelpers'
 import { Scalar } from '@babylonjs/core/Maths/math.scalar'
@@ -46,7 +46,7 @@ export class SolarSystem implements CreateSceneClass {
 
         // This creates and positions a free camera (non-mesh)
         const camera = new ArcRotateCamera(
-            "my first camera",
+            'my first camera',
             0,
             1.26,
             350,
@@ -110,7 +110,7 @@ export class SolarSystem implements CreateSceneClass {
 
     createPlanets(scene: Scene): AbstractMesh[] {
         const hg = {
-            name: "hg",
+            name: 'hg',
             posRadians: Scalar.RandomRange(0, 2 * Math.PI),
             posRadius: 14,
             scale: 2,
@@ -118,7 +118,7 @@ export class SolarSystem implements CreateSceneClass {
             rocky: true
         }
         const aphro = {
-            name: "aphro",
+            name: 'aphro',
             posRadians: Scalar.RandomRange(0, 2 * Math.PI),
             posRadius: 35,
             scale: 3.5,
@@ -126,7 +126,7 @@ export class SolarSystem implements CreateSceneClass {
             rocky: true
         }
         const tellus = {
-            name: "tellus",
+            name: 'tellus',
             posRadians: Scalar.RandomRange(0, 2 * Math.PI),
             posRadius: 65,
             scale: 3.75,
@@ -134,7 +134,7 @@ export class SolarSystem implements CreateSceneClass {
             rocky: true
         }
         const ares = {
-            name: "ares",
+            name: 'ares',
             posRadians: Scalar.RandomRange(0, 2 * Math.PI),
             posRadius: 100,
             scale: 3,
@@ -142,7 +142,7 @@ export class SolarSystem implements CreateSceneClass {
             rocky: true
         }
         const zeus = {
-            name: "zeus",
+            name: 'zeus',
             posRadians: Scalar.RandomRange(0, 2 * Math.PI),
             posRadius: 140,
             scale: 6,
@@ -232,13 +232,13 @@ export class SolarSystem implements CreateSceneClass {
 
     showDebug(scene: Scene) {
         void Promise.all([
-            import("@babylonjs/core/Debug/debugLayer"),
-            import("@babylonjs/inspector"),
+            import('@babylonjs/core/Debug/debugLayer'),
+            import('@babylonjs/inspector'),
         ]).then(() => {
             scene.debugLayer.show({
                 handleResize: true,
                 overlay: true,
-                globalRoot: document.getElementById("#root") || undefined,
+                globalRoot: document.getElementById('#root') || undefined,
             })
         })
     }

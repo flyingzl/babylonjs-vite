@@ -1,24 +1,24 @@
-import { Engine } from "@babylonjs/core/Engines/engine"
-import { WebGPUEngine } from "@babylonjs/core/Engines/webgpuEngine"
-import { getSceneModuleWithName } from "./createScene"
-import "@babylonjs/core/Engines/WebGPU/Extensions/engine.uniformBuffer"
+import { Engine } from '@babylonjs/core/Engines/engine'
+import { WebGPUEngine } from '@babylonjs/core/Engines/webgpuEngine'
+import { getSceneModuleWithName } from './createScene'
+import '@babylonjs/core/Engines/WebGPU/Extensions/engine.uniformBuffer'
 
 const getModuleToLoad = (): string | undefined =>
-    location.search.split("scene=")[1]?.split("&")[0]
+    location.search.split('scene=')[1]?.split('&')[0]
 
 export const babylonInit = async (): Promise<void> => {
     // get the module to load
     const moduleName = getModuleToLoad()
     const createSceneModule = await getSceneModuleWithName(moduleName)
     const engineType =
-        location.search.split("engine=")[1]?.split("&")[0] || "webgl"
+        location.search.split('engine=')[1]?.split('&')[0] || 'webgl'
     // Execute the pretasks, if defined
     await Promise.all(createSceneModule.preTasks || [])
     // Get the canvas element
-    const canvas = document.getElementById("renderCanvas") as HTMLCanvasElement
+    const canvas = document.getElementById('renderCanvas') as HTMLCanvasElement
     // Generate the BABYLON 3D engine
     let engine: Engine
-    if (engineType === "webgpu") {
+    if (engineType === 'webgpu') {
         const webGPUSupported = await WebGPUEngine.IsSupportedAsync
         if (webGPUSupported) {
             const webgpu = engine = new WebGPUEngine(canvas, {
@@ -48,7 +48,7 @@ export const babylonInit = async (): Promise<void> => {
     })
 
     // Watch for browser/canvas resize events
-    window.addEventListener("resize", function () {
+    window.addEventListener('resize', function () {
         engine.resize()
     })
 }

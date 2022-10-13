@@ -1,22 +1,22 @@
-import { Engine } from "@babylonjs/core/Engines/engine"
-import { Scene } from "@babylonjs/core/scene"
-import { ArcRotateCamera } from "@babylonjs/core/Cameras/arcRotateCamera"
-import { Vector3 } from "@babylonjs/core/Maths/math.vector"
-import { HemisphericLight } from "@babylonjs/core/Lights/hemisphericLight"
-import { CreateSceneClass } from "../createScene"
-import { SceneLoader } from "@babylonjs/core/Loading/sceneLoader"
-import { CubeTexture } from "@babylonjs/core/Materials/Textures/cubeTexture"
-import { EnvironmentHelper } from "@babylonjs/core/Helpers/environmentHelper"
+import { Engine } from '@babylonjs/core/Engines/engine'
+import { Scene } from '@babylonjs/core/scene'
+import { ArcRotateCamera } from '@babylonjs/core/Cameras/arcRotateCamera'
+import { Vector3 } from '@babylonjs/core/Maths/math.vector'
+import { HemisphericLight } from '@babylonjs/core/Lights/hemisphericLight'
+import { CreateSceneClass } from '../createScene'
+import { SceneLoader } from '@babylonjs/core/Loading/sceneLoader'
+import { CubeTexture } from '@babylonjs/core/Materials/Textures/cubeTexture'
+import { EnvironmentHelper } from '@babylonjs/core/Helpers/environmentHelper'
 
 // required imports
-import "@babylonjs/core/Loading/loadingScreen"
-import "@babylonjs/loaders/glTF"
-import "@babylonjs/core/Materials/standardMaterial"
-import "@babylonjs/core/Materials/Textures/Loaders/envTextureLoader"
+import '@babylonjs/core/Loading/loadingScreen'
+import '@babylonjs/loaders/glTF'
+import '@babylonjs/core/Materials/standardMaterial'
+import '@babylonjs/core/Materials/Textures/Loaders/envTextureLoader'
 
 
 // digital assets
-import controllerModel from "../../assets/glb/samsung-controller.glb"
+import controllerModel from '../../assets/glb/samsung-controller.glb'
 import roomEnvironment from '../../assets/environment/room.env'
 
 export class LoadModelAndEnvScene implements CreateSceneClass {
@@ -29,7 +29,7 @@ export class LoadModelAndEnvScene implements CreateSceneClass {
 
         // This creates and positions a free camera (non-mesh)
         const camera = new ArcRotateCamera(
-            "my first camera",
+            'my first camera',
             0,
             Math.PI / 3,
             10,
@@ -58,7 +58,7 @@ export class LoadModelAndEnvScene implements CreateSceneClass {
 
         // This creates a light, aiming 0,1,0 - to the sky (non-mesh)
         const light = new HemisphericLight(
-            "light",
+            'light',
             new Vector3(0, 1, 0),
             scene
         )
