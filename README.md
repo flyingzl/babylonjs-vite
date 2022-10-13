@@ -16,7 +16,7 @@ To run the basic scene:
 
 1. Clone / download this repository
 2. run `npm install` to install the needed dependencies.
-3. run `npm start`
+3. run `npm run dev`
 4. open `http://127.0.0.1:5173/`
 
 Running `npm start` will start the vite dev server with hot-reloading turned on. Open your favorite editor (mine is VSCode, but you can use nano. we don't discriminate) and start editing.
